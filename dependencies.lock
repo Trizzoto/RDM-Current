@@ -1,0 +1,31 @@
+dependencies:
+  espressif/esp_lcd_touch:
+    dependencies: []
+    source:
+      path: C:\Users\ruuva\workspace\RDM-7_Dash\components\espressif__esp_lcd_touch
+      type: local
+    version: 1.1.1
+  espressif/esp_lcd_touch_gt911:
+    dependencies: []
+    source:
+      path: C:\Users\ruuva\workspace\RDM-7_Dash\components\espressif__esp_lcd_touch_gt911
+      type: local
+    version: 1.1.0
+  idf:
+    source:
+      type: idf
+    version: 5.3.1
+  lvgl/lvgl:
+    dependencies: []
+    source:
+      path: C:\Users\ruuva\workspace\RDM-7_Dash\components\lvgl__lvgl
+      type: local
+    version: 8.3.11
+direct_dependencies:
+- espressif/esp_lcd_touch
+- espressif/esp_lcd_touch_gt911
+- idf
+- lvgl/lvgl
+manifest_hash: d2a732310061e0d153b6fff91d67c6f76d4a239537f6ccf1f0a832b034fcbc90
+target: esp32s3
+version: 2.0.0

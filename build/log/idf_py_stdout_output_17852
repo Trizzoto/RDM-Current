@@ -1,0 +1,11 @@
+-- IDF_TARGET is not set, guessed 'esp32s3' from sdkconfig 'C:/Users/ruuva/workspace/RDM-7_Dash/sdkconfig'
+-- Found Git: C:/Program Files/Git/cmd/git.exe (found version "2.47.1.windows.2") 
+-- Component directory C:/Users/ruuva/workspace/RDM-7_Dash/components/SystemView-master does not contain a CMakeLists.txt file. No component will be added
+-- The C compiler identification is unknown
+-- The CXX compiler identification is unknown
+-- The ASM compiler identification is unknown
+-- Found assembler: xtensa-esp32s3-elf-gcc
+-- Warning: Did not find file Compiler/-ASM
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/ruuva/workspace/RDM-7_Dash/build/CMakeFiles/CMakeOutput.log".
+See also "C:/Users/ruuva/workspace/RDM-7_Dash/build/CMakeFiles/CMakeError.log".
