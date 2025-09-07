@@ -128,6 +128,8 @@ LV_IMG_DECLARE(ui_img_check_engine_png);    // assets/check engine.png
 LV_IMG_DECLARE(ui_img_launch_control_png);    // assets/launch control.png
 LV_IMG_DECLARE(ui_img_high_beam_png);    // assets/high beam.png
 LV_IMG_DECLARE(ui_img_gauge_v0_2_png);
+LV_IMG_DECLARE(ui_img_648933004);
+LV_IMG_DECLARE(ui_img_363163260);
 
 
 LV_FONT_DECLARE(ui_font_Manrope_16_BOLD);
@@ -203,7 +205,6 @@ extern lv_obj_t * ui_RPM_Value;
 extern lv_obj_t * ui_RPM_Label;
 extern lv_obj_t * ui_RPM_Panel_Block;
 extern lv_obj_t * ui_Panel9;
-extern lv_obj_t * ui_Panel10;
 extern lv_obj_t * ui_RPM_Base_1;
 extern lv_obj_t * ui_RPM_Base_2;
 extern lv_obj_t * ui_RPM_Base_3;

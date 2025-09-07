@@ -6,6 +6,7 @@
 #include "ui.h"
 #include "core/lv_event.h"
 #include "ui_helpers.h"
+#include "screens/splash_screen.h"
 
 ///////////////////// VARIABLES ////////////////////
 
@@ -168,7 +169,6 @@ lv_obj_t * ui_RPM_Value;
 lv_obj_t * ui_RPM_Label;
 lv_obj_t * ui_RPM_Panel_Block;
 lv_obj_t * ui_Panel9;
-lv_obj_t * ui_Panel10;
 lv_obj_t * ui_RPM_Base_1;
 lv_obj_t * ui_RPM_Base_2;
 lv_obj_t * ui_RPM_Base_3;
@@ -197,21 +197,7 @@ lv_obj_t * ui____initial_actions0;
 const lv_img_dsc_t * ui_imgset_gauge_v_3_background_trial[1] = {&ui_img_gauge_v0_3_background_trial_png};
 const lv_img_dsc_t * ui_imgset_rpm_indicator_png[1] = {&ui_img_rpm_indicator_png};
 
-typedef enum {
-    LITTLE_ENDIAN_ORDER,
-    BIG_ENDIAN_ORDER
-} endian_t;
-
-typedef struct {
-    bool enabled;
-    uint32_t can_id;
-    uint8_t endianess;    // 0 = Big Endian, 1 = Little Endian
-    uint8_t bit_start;
-    uint8_t bit_length;
-    uint8_t decimals;
-    float value_offset;
-    float scale;           // NEW: scale factor
-} value_config_t;
+// Removed duplicate type definitions - now defined in ui_Screen3.h
 
 void ui_Screen4_screen_init(void);
 lv_obj_t * ui_Screen4;
@@ -256,20 +242,11 @@ void ui_event_Panel2(lv_event_t * e)
     }
 }
 
-///////////////////// SCREENS ////////////////////
-
 void ui_init(void)
 {
-    LV_EVENT_GET_COMP_CHILD = lv_event_register_id();
-
     lv_disp_t * dispp = lv_disp_get_default();
     lv_theme_t * theme = lv_theme_default_init(dispp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED),
-                                               false, LV_FONT_DEFAULT);
+                                             true, LV_FONT_DEFAULT);
     lv_disp_set_theme(dispp, theme);
-    ui_Screen1_screen_init();
-    ui_Screen2_screen_init();
-    ui_Screen3_screen_init();
-    ui_Screen4_screen_init();
-    ui____initial_actions0 = lv_obj_create(NULL);
-    lv_disp_load_scr(ui_Screen3);
+    show_splash_screen();
 }

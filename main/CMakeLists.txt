@@ -1,10 +1,74 @@
-cmake_minimum_required(VERSION 3.16)
-
-include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-add_compile_options("-Wno-format")
-project(racedash)
-
-set(EXTRA_COMPONENT_DIRS 
-    "${CMAKE_SOURCE_DIR}/components/espressif__esp_io_expander-v1.0.1"
-    "${CMAKE_SOURCE_DIR}/components/sd_card"
+idf_component_register(
+    SRCS 
+        "main.c"
+        "ota_handler.c"
+        "ota_update_dialog.c"
+        "gps/gps.c"
+        "ui/ui.c"
+        "ui/ui_helpers.c"
+        "ui/utils.c"
+        "ui/signals.c"
+        "ui/ui_preconfig.c"
+        "ui/components/ui_comp.c"
+        "ui/components/ui_comp_hook.c"
+        "ui/components/ui_comp_slider2.c"
+        "ui/screens/ui_Screen1.c"
+        "ui/screens/ui_Screen2.c"
+        "ui/screens/ui_Screen3.c"
+        "ui/screens/splash_screen.c"
+        "ui/device_settings.c"
+        "ui/config/create_config_controls.c"
+        "ui/callbacks/ui_callbacks.c"
+        "ui/menu/menu_screen.c"
+        "ui/screens/ui_Screen4.c"
+        "ui/screens/ui_wifi.c"
+        "device_id.c"
+        "fuel_input.c"
+        "ui/fonts/ui_font_fugaz_14.c"
+        "ui/fonts/ui_font_fugaz_17.c"
+        "ui/fonts/ui_font_fugaz_28.c"
+        "ui/fonts/ui_font_fugaz_56.c"
+        "ui/fonts/ui_font_Manrope_35_BOLD.c"
+        "ui/fonts/ui_font_Manrope_54_BOLD.c"
+        "ui/images/ui_img_rev_0_sticker_png.c"
+        "ui/images/ui_img_rev_0_sticker2_png.c"
+        "ui/images/ui_img_rev_0_sticker3_png.c"
+        "ui/images/ui_temporary_image.c"
+        "ui/images/ui_img_indicator_left_png.c"
+        "ui/images/ui_img_indicator_right_png.c"
+        "ui/images/ui_img_363163260.c"
+        "ui/images/ui_img_648933004.c"
+        "ui/images/ui_img_669363031.c"
+        "ui/images/ui_img_rdm_logo_dash_png.c"
+        "web_server.c"
+        "display_capture.c"
+    INCLUDE_DIRS 
+        "."
+        "./include"
+        "gps"
+        "ui"
+        "ui/components"
+        "ui/screens"
+        "ui/fonts"
+        "ui/images"
+    REQUIRES 
+        "driver"
+        "esp_lcd"
+        "esp_lcd_touch"
+        "esp_lcd_touch_gt911"
+        "esp_timer"
+        "lvgl"
+        "nvs_flash"
+        "fatfs"
+        "esp_wifi"
+        "esp_http_client"
+        "json"
+        "esp_https_ota"
+        "app_update"
+        "mbedtls"
+        "esp-tls"
+        "esp_http_server"
 )
+
+target_compile_definitions(${COMPONENT_LIB} PUBLIC "-DLV_CONF_INCLUDE_SIMPLE")
+target_compile_definitions(${COMPONENT_LIB} PUBLIC "-DLV_CONF_PATH=\"lv_conf.h\"")
